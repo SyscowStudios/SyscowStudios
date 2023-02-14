@@ -1,0 +1,49 @@
+:root {
+    --bg: #363533;
+    --fg: #c9c9c9;
+}
+
+body {
+    background-color: var(--bg);
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+#navbar {
+    background-color: rgba(0, 0, 0, 10);
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.btn-navbar {
+    font-size: 24px;
+}
+
+#navbar .btn-navbar {
+    float: left;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+    border-radius: 10px;
+}
+
+#navbar .btn-navbar:hover {
+    background-color: #ddd;
+    color: black;
+}
+
+.selected {
+    background-color: #04AA6D;
+    color: white;
+}
+
+#navbar .btn-navbar:active {
+    background-color: #04AA6D;
+    color: white;
+}
+
+.nohover:hover {
+    background-color: auto;
+    color: auto;
+}

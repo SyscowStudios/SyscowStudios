@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="main.css">
+    <link rel="icon" type="image" href="assets/img/logo-transparent.png">
+    <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
+    <title>Syscow Studios™</title>
+</head>
+<body>
+    <div id="bg">
+        <header>
+            <div class="navbar" id="navbar">
+                <div class="dropdown" id="icon">
+                    <a class="dropbtn" onclick="mf()"><img width="150" height="150" title="Syscow Logo" src="assets/img/logo-transparent.png"></a>
+                    <div class="dropdown-content" id="myDropDown">
+                        <a href="/" class="" id="purchase">Purchase our Games <i class="fas fa-chevron-right"></i></a>
+                        <a href="/" class="" id="home">Home</a>
+                        <a href="/" class="" id="team">Team</a>
+                        <a href="/blog" class="" id="blog">Founder's Blog</a>
+                        <a href="/" class="" id="about">About</a>
+                        <a href="/" class="" id="contact">Contact</a>
+                    </div>
+                </div>
+            </div>
+        </header>
+    
+        <div id="frontpage">
+            
+        </div>
+        <div id="featured-game">
+            <img title="cleria-logo" height="400" width="750" src="assets/img/cleria-logo.png" class="featured">CLERIA</img>
+            <h3 class="info-under">COMING SOON TO ALL PLATFORMS</h3>
+            <button onclick="redirect('/cleria')" class="btn warning featuredpurchase">Purchase</button>
+        </div>
+    </div>
+
+    <script>
+        function mf() {
+            document.getElementById("myDropDown").classList.toggle('show');
+        }
+
+        function redirect(loc) {
+            window.location.href = loc;
+        }
+
+        window.onclick = (e) => {
+            if (!e.target.classList.contains('dropbtn')) {
+                if (myDropdown.classList.contains('show')) {
+                    myDropdown.classList.remove('show');
+                }
+            }
+        }
+    </script>
+</body>
+</html>
