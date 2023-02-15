@@ -44,5 +44,23 @@
             <button class="btn default">Download for Linux</button>
         </div>
     </div>
+
+    <script>
+        function mf() {
+            document.getElementById("myDropDown").classList.toggle('show');
+        }
+
+        function redirect(loc) {
+            window.location.href = 'SyscowStudios/' + loc;
+        }
+
+        window.onclick = (e) => {
+            if (!e.target.classList.contains('dropbtn')) {
+                if (myDropdown.classList.contains('show')) {
+                    myDropdown.classList.remove('show');
+                }
+            }
+        }
+    </script>
 </body>
 </html>
