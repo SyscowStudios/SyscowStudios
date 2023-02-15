@@ -47,6 +47,10 @@ body {
     background-size: cover;
 }
 
+.pointerhover:hover {
+  cursor: pointer;
+}
+
 .featured {
     display: block;
     font-size: 130px;
