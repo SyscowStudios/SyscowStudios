@@ -21,7 +21,7 @@ body {
 
 #bg {
     display: block;
-    background-image: url('assets/img/analog-horror.avif');
+    background-image: url('assets/img/analog_horror.png');
     width: auto;
     background-size: cover;
     height: 1000px;
@@ -35,7 +35,7 @@ body {
 
 #frontpage {
     display: block;
-    background-image: url('assets/img/analog-horror.avif');
+    background-image: url('assets/img/analog_horror.png');
     width: auto;
     background-size: cover;
     height: 1000px;
@@ -51,6 +51,10 @@ body {
   cursor: pointer;
 }
 
+.featured-game {
+  text-align: center;
+}
+
 .featured {
     display: block;
     font-size: 130px;
@@ -62,6 +66,7 @@ body {
     margin-top: -35%;
     margin-left: 33%;
 }
+
 
 .info-under {
     display: block;
