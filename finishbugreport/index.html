@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="cleria.css">
     <link rel="icon" type="image" href="../assets/img/logo-transparent.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <title>Syscow Studios™</title>
 </head>
 <body>
@@ -24,31 +25,23 @@
     </header>
 
     <div id="about">
-        <h1>• About Cleria</h1>
-        <h3>
-            Cleria is a 3D adventure story-mode horror game.
-        </h3>
         <br>
         <br>
         <br>
         <br>
-        <div class="downloads">
-            <h1>• Downloads (Latest version)</h1>
-            <h3 class="red">• Claire's Chocolate Factory is  currently in development,</h3>
-            <h3 class="red">there are many known issues with the current DEVELOPER release</h3>
-            <h3 class="red">that are not mentioned here. To report more you can visit our <a onclick="redirect('/bugs')">bug reports</a> page.</h3>
-            <button class="btn info" onclick="SendToReleases()">Download for Windows</button>
+        <div class="userInfo">
+            <img src="../assets/img/checkmark.png" width="100">
+            <h1 class="green">Thank You!</h1>
+            <h2>Your bug report has been recorded and sent</h2>
+            <h2>to our team!</h2>
+            <h3>ID: <a class="red">No ID Available.</a></h3>
             <br>
-            <br>
-            <h3 class="red">• Mac and Windows are not available yet!</h3>
-            <button class="btn warning">Download for Mac</button>
-            <br>
-            <br>
-            <button class="btn default">Download for Linux</button>
+            <button onclick="redirect('/')" class="btn warning"><i class="fa-solid fa-right-from-bracket"></i> Back to Main Page</button>
         </div>
     </div>
 
     <script>
+
         function mf() {
             document.getElementById("myDropDown").classList.toggle('show');
         }
@@ -67,6 +60,32 @@
                     myDropdown.classList.remove('show');
                 }
             }
+        }
+
+        async function SubmitBugReport() {
+            let subj = document.getElementById("subject")
+            let desc = document.getElementById("desc")
+            let fiel = document.getElementById("files")
+
+            const request = new XMLHttpRequest()
+            request.open("POST", "https://discord.com/api/webhooks/1101600162721300480/xEey3oTa7cMn4aOY1CdioAfClCjgzuO8ofMqXnxvSQdLSZNMThYGBndY12erh2rE0hJm")
+            request.setRequestHeader('Content-type', 'application/json');
+            const params = {
+                username: "Claire's Demon",
+                avatar_url: "https://cdn.discordapp.com/attachments/1076401647258976326/1078675960758546492/Mapi_ink_demon_from_bendy_and_the_dark_revival_701deb05-ea7b-4371-8adc-98d9cab006db.png",
+                footer: {
+                    "text": "Attachments are under this message."
+                },
+                embeds: [
+                    {
+                        "title": "Bug: " + subj.value,
+                        "description": desc.value
+                    }
+                ]
+            }
+            request.send(JSON.stringify(params));
+
+            await redirect("/finishbugreport")
         }
     </script>
 </body>

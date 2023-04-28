@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="cleria.css">
+    <link rel="icon" type="image" href="../assets/img/logo-transparent.png">
+    <title>Syscow Studios™</title>
+</head>
+<body>
+    <header>
+        <div id="navbar">
+            <div id="icon">
+                <a class="btn-navbar nohover" href="/"><img width="100" height="100" title="Syscow Logo" src="../assets/img/logo-transparent.png"></a>
+            </div>
+            <a onclick="redirect('/')" class="btn-navbar selected" id="purchase">Purchase our Games</a>
+            <a onclick="redirect('/')" class="btn-navbar" id="home">Home</a>
+            <a onclick="redirect('/')" class="btn-navbar" id="team">Team</a>
+            <a onclick="redirect('/blog')" class="btn-navbar" id="blog">Founder's Blog</a>
+            <a onclick="redirect('/')" class="btn-navbar" id="about">About</a>
+            <a onclick="redirect('/')" class="btn-navbar" id="contact">Contact</a>
+        </div>
+    </header>
+
+    <div id="about">
+        <div class="before">
+            <h1>• Before You Start:</h1>
+            <h4 class="blue">There are some known issues with the game as of now which are listed below, please do not re-report bugs! Thank you!</h4>
+            <h4 class="blue">If the bug is <a class="not-fixed">red</a>, it means it is not fixed, if it is <a class="fixed">green</a>, it means it is fixed.</h4>
+            <br>
+            <h4 class="not-fixed">1. Colliding with some objects causes you to be teleported away from the Map or into a random location in the map.</h4>
+            <h4></h4>
+        </div>
+        <br>
+        <br>
+        <br>
+        <div class="userInfo">
+            <h1>Bug Report Form</h1>
+            <a>Bug Subject: </a>
+            <br>
+            <br>
+            <input id="subject" placeholder="Subject" type="tex">
+            <br>
+            <br>
+            <br>
+            <a>Bug Description: </a>
+            <br>
+            <br>
+            <textarea id="desc" placeholder="Describe how to produce the bug, and possible ways to fix it!"></textarea>
+            <br>
+            <br>
+            <h3>Add Attachments if neccessary</h3>
+            <br>
+            <div id="drop-area">
+                <input placeholder="Upload Files" type="file" id="files"></input>
+            </div>
+            <br>
+            <br>
+            <button class="btn success-f" onclick="SubmitBugReport()">Submit Report</button>
+        </div>
+    </div>
+
+    <script>
+
+        function mf() {
+            document.getElementById("myDropDown").classList.toggle('show');
+        }
+
+        function SendToReleases() {
+            window.location.href = "https://github.com/SyscowStudios/CentServices/releases/latest";
+        }
+
+        function redirect(loc) {
+            window.location.href = "https://syscowstudios.github.io/SyscowStudios/" + loc;
+        }
+
+        window.onclick = (e) => {
+            if (!e.target.classList.contains('dropbtn')) {
+                if (myDropdown.classList.contains('show')) {
+                    myDropdown.classList.remove('show');
+                }
+            }
+        }
+
+        function SubmitBugReport() {
+            let subj = document.getElementById("subject")
+            let desc = document.getElementById("desc")
+            let fiel = document.getElementById("files")
+
+            const request = new XMLHttpRequest()
+            request.open("POST", "https://discord.com/api/webhooks/1101600162721300480/xEey3oTa7cMn4aOY1CdioAfClCjgzuO8ofMqXnxvSQdLSZNMThYGBndY12erh2rE0hJm")
+            request.setRequestHeader('Content-type', 'application/json');
+            const params = {
+                username: "Claire's Demon",
+                avatar_url: "https://cdn.discordapp.com/attachments/1076401647258976326/1078675960758546492/Mapi_ink_demon_from_bendy_and_the_dark_revival_701deb05-ea7b-4371-8adc-98d9cab006db.png",
+                footer: {
+                    "text": "Attachments are under this message."
+                },
+                embeds: [
+                    {
+                        "title": "Bug: " + subj.value,
+                        "description": desc.value
+                    }
+                ]
+            }
+            request.send(JSON.stringify(params));
+
+            redirect("/finishbugreport")
+        }
+    </script>
+</body>
+</html>
