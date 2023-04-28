@@ -47,6 +47,18 @@ body {
     color: white;
 }
 
+.cursor-pointer:hover {
+  cursor: pointer;
+}
+
+.green {
+  color: lightgreen;
+}
+
+.blue {
+  color: lightblue;
+}
+
 .nohover:hover {
     background-color: auto;
     color: auto;
