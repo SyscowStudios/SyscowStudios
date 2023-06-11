@@ -136,8 +136,57 @@ body {
     border-color: #e7e7e7;
     color: black;
   }
+
+  .logo {
+    display: flex;
+    margin: auto;
+    animation: 1s ease-in 1 show;
+  }
+
+  header {
+    align-items: center;
+  }
   
   .default:hover {
     background: #e7e7e7;
     transition: 0.5s;
   }
+
+  #about {
+    align-items: center;
+    text-align: center;
+    animation: 1s ease-in 1 slideInLeft;
+  }
+  
+  .bold {
+    font-weight: bold;
+    text-decoration: overline;
+  }
+
+  .color-blue {
+    color: lightblue;
+  }
+
+  .color-gray {
+    color: gray;
+  }
+
+  @keyframes show{
+    0%{
+    	opacity:0;
+    	transform: scale(0.9);
+    }
+    100%{
+    	opacity:1;
+    	transform: scale(1);
+    }
+}
+
+@keyframes slideInLeft {
+  0% {
+    transform: translateY(-100%);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}

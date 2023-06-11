@@ -10,52 +10,24 @@
 </head>
 <body>
     <header>
-        <div id="navbar">
-            <div id="icon">
-                <a class="btn-navbar nohover" href="/"><img width="100" height="100" title="Syscow Logo" src="../assets/img/logo-transparent.png"></a>
-            </div>
-            <a onclick="redirect('/')" class="btn-navbar selected" id="purchase">Purchase our Games</a>
-            <a onclick="redirect('/')" class="btn-navbar" id="home">Home</a>
-            <a onclick="redirect('/')" class="btn-navbar" id="team">Team</a>
-            <a onclick="redirect('/blog')" class="btn-navbar" id="blog">Founder's Blog</a>
-            <a onclick="redirect('/')" class="btn-navbar" id="about">About</a>
-            <a onclick="redirect('/')" class="btn-navbar" id="contact">Contact</a>
-        </div>
+        <img class='logo center' width='200' height='200' src='../assets/img/logo-transparent.png' alt='logo'>
     </header>
 
     <div id="about">
-        <h1>• Team</h1>
-        <h3>
+        <h1 class='bold color-blue'>Team</h1>
+        <h3 class='color-gray'>
             Our Team Consits of only two people as of now!
         </h3>
         <br>
         <br>
-        <h3>• Elia Behroozikiya - UX/UI Designer</a>
+        <h3>Elia Behroozikiya • UX/UI Designer</a>
         <br>
         <br>
-        <h3>• Soroush Behzadi - Front-end/Back-end Developer</a>
+        <h3>Soroush Behzadi • Front-end/Back-end Developer</a>
     </div>
 
     <script>
-        function mf() {
-            document.getElementById("myDropDown").classList.toggle('show');
-        }
-
-        function SendToReleases() {
-            window.location.href = "https://github.com/SyscowStudios/CentServices/releases/latest";
-        }
-
-        function redirect(loc) {
-            window.location.href = "https://syscowstudios.github.io/SyscowStudios/" + loc;
-        }
-
-        window.onclick = (e) => {
-            if (!e.target.classList.contains('dropbtn')) {
-                if (myDropdown.classList.contains('show')) {
-                    myDropdown.classList.remove('show');
-                }
-            }
-        }
+        
     </script>
 </body>
 </html>
